@@ -21,4 +21,19 @@ yargs.command({
     } 
 })
 
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a contact',
+    builder: {
+        name: {
+            describe: 'Name of the person to remove',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: (argv) => {
+        console.log('Name: ' + argv.name);
+    }
+})
+
 yargs.parse();
